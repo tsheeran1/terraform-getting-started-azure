@@ -8,9 +8,9 @@ trigger:
 
 variables:
   - name: terraform_download_sha
-    value: 43806e68f7af396449dd4577c6e5cb63c6dc4a253ae233e1dddc46cf423d808b
+    value: 602d2529aafdaa0f605c06adb7c72cfb585d8aa19b3f4d8d189b42589e27bf11
   - name: terraform_version
-    value: 0.12.8
+    value: 0.12.24
   - name: tf_in_automation
     value: true
 
@@ -33,7 +33,7 @@ stages:
 
           - task: AzureCLI@1
             inputs:
-              azureSubscription: 'Azure MSDN'
+              azureSubscription: 'Azure subscription 1'
               scriptLocation: 'scriptPath'
               scriptPath: './scripts/environment-setup.sh'
               addSpnToEnvironment: true
