@@ -31,11 +31,11 @@ stages:
               filePath: './scripts/terraform-download.sh'
             displayName: 'Terraform Download'
 
-#          - task: AzureCLI@1
-#            inputs:
-#              azureSubscription: 'Azure subscription 1'
-#              scriptLocation: 'scriptPath'
-#              scriptPath: './scripts/environment-setup.sh'
-#              addSpnToEnvironment: true
-#              failOnStandardError: true
-#            displayName: 'Environment Setup'
+          - task: AzureCLI@1
+            inputs:
+              azureSubscription: 'Azure subscription 1'
+              scriptLocation: 'scriptPath'
+              scriptPath: './scripts/environment-setup.sh'
+              addSpnToEnvironment: true
+              failOnStandardError: true
+            displayName: 'Environment Setup'
