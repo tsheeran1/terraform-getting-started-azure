@@ -2,7 +2,6 @@
 set -euo pipefail
 
 echo "Starting Environment Setup"
-echo  "servicePrincipalID= ${servicePrincipalId}"
 
 echo "##vso[task.setvariable variable=AZURE_CLIENT_ID;issecret=true]${servicePrincipalId}"
 echo "##vso[task.setvariable variable=AZURE_CLIENT_SECRET;issecret=true]${servicePrincipalKey}"
