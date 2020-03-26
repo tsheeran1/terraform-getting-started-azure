@@ -2,7 +2,7 @@
 set -euo pipefail
 
 echo "Starting Terraform-init.sh"
-echo "argument passed = ${1}"
+echo "argument passed = "${1}"
 echo "WORKING_DIRECTORY = "${WORKING_DIRECTORY}"
 
 
