@@ -5,7 +5,7 @@ provider "azurerm" {
 
 # Common variables
 locals {
-  resource_location = "westus2"
+  resource_location = "centralus"
 }
 
 # Create a new resource group

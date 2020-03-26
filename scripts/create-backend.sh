@@ -2,11 +2,11 @@
 set -euo pipefail
 
 ID=$(uuidgen)
-LOCATION=westus
+LOCATION=centralus
 RG=terraformrg
 
 # Create unique name for storage account
-STORAGE_ACCOUNT=$(echo "terraform-${ID}" | tr '[:upper:]' '[:lower:]' | sed 's/-//g' | cut -c1-24)
+STORAGE_ACCOUNT= "tsheeran-tfstate"
 
 # Create Resource Group for Backend Storage
 az group create \
