@@ -5,3 +5,5 @@ WORKING_DIRECTORY=${1}
 cd ${WORKING_DIRECTORY}
 
 terraform plan -input=false -out ${BUILD_BUILDNUMBER}.tfplan
+
+echo "Plan stored in ${BUILD_BUILDNUMBER}.tfplan"
