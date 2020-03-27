@@ -110,9 +110,16 @@ stages:
                 #     artifact: 'drop'
                 #   displayName: 'Download Plan Artifact'
 
+                - task: Bash@3
+                  inputs:
+                    targetType: inline
+                    script: |
+                      echo "System.DefaultWorkingDirectory = ${System.DefaultWorkingDirectory}"
+                  displayName: "New Task"
+
                 - task: ExtractFiles@1
                   inputs:
-                    archiveFilePatterns: '$(System.DefaultWorkingDirectory)/drop/$(Build.BuildId).tgz'
+                    archiveFilePatterns: '$(System.DefaultWorkingDirectory)/$(Build.BuildId).tgz'
                     destinationFolder: '$(System.DefaultWorkingDirectory)/'
                     cleanDestinationFolder: false
                   displayName: 'Extract Plan Artifact'
