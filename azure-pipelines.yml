@@ -33,7 +33,7 @@ stages:
 
           - task: AzureCLI@1
             inputs:
-              azureSubscription: 'Azure RM'
+              azureSubscription: 'Azure RM 1'
               scriptLocation: inlineScript
 #              scriptPath: './scripts/environment-setup.sh'
               scriptType: bash
