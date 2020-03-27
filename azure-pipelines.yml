@@ -85,12 +85,11 @@ stages:
               replaceExistingArchive: true
             displayName: 'Create Plan Artifact'
 
-          - task: PublishBuildArtifacts@1
+          - task: PublishPipelineArtifact@1
             inputs:
-              PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-              ArtifactName: 'drop'
-              publishLocation: 'Container'
-            displayName: 'Publish Plan Artifact'
+              path: '$(System.DefaultWorkingDirectory)'
+              artifact: 'drop'
+            displayName: 'Publish Pipeline Artifact'
 
   - stage: Deploy
     jobs:
@@ -105,14 +104,15 @@ stages:
               steps:
                 - checkout: none
 
-                - task: DownloadBuildArtifacts@0
+                - task: DownloadPipelineArtifact@2
                   inputs:
-                    artifactName: 'drop'
+                    path: '$(System.DefaultWorkingDirectory)'
+                    artifact: 'drop'
                   displayName: 'Download Plan Artifact'
 
                 - task: ExtractFiles@1
                   inputs:
-                    archiveFilePatterns: '$(System.ArtifactsDirectory)/drop/$(Build.BuildId).tgz'
+                    archiveFilePatterns: '$(System.DefaultWorkingDirectory)/drop/$(Build.BuildId).tgz'
                     destinationFolder: '$(System.DefaultWorkingDirectory)/'
                     cleanDestinationFolder: false
                   displayName: 'Extract Plan Artifact'
