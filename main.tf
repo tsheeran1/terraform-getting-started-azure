@@ -10,7 +10,7 @@ locals {
 
 # Create a new resource group
 resource "azurerm_resource_group" "rg" {
-  name     = "terraformrg"
+  name     = "myTFResourceGroup"
   location = local.resource_location
 
   tags = {
