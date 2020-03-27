@@ -104,11 +104,11 @@ stages:
               steps:
                 - checkout: none
 
-                - task: DownloadPipelineArtifact@2
-                  inputs:
-                    path: '$(System.DefaultWorkingDirectory)'
-                    artifact: 'drop'
-                  displayName: 'Download Plan Artifact'
+                # - task: DownloadPipelineArtifact@2
+                #   inputs:
+                #     path: '$(System.DefaultWorkingDirectory)'
+                #     artifact: 'drop'
+                #   displayName: 'Download Plan Artifact'
 
                 - task: ExtractFiles@1
                   inputs:
