@@ -76,6 +76,13 @@ stages:
               ARM_TENANT_ID: $(AZURE_TENANT_ID)
             displayName: 'Terraform Plan'
 
+          - task: Bash@3
+            inputs:
+              targetType: inline
+              script: |
+                echo "Build.ArtifactStagingDirectory = $(Build.ArtifactStagingDirectory)"
+            displayName: "New Build Task"
+
           - task: ArchiveFiles@2
             inputs:
               rootFolderOrFile: '$(Build.SourcesDirectory)'
