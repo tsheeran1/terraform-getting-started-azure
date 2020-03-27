@@ -115,7 +115,7 @@ stages:
                     targetType: inline
                     script: |
                       echo "System.DefaultWorkingDirectory = $(System.DefaultWorkingDirectory)"
-                      ls
+                      echo $(Pipeline.Workspace)
                   displayName: "New Task"
 
                 - task: ExtractFiles@1
