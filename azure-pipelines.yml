@@ -95,7 +95,7 @@ stages:
 
           - task: PublishPipelineArtifact@1
             inputs:
-              path: '$(System.DefaultWorkingDirectory)'
+              path: '$(Build.ArtifactStagingDirectory)'
               artifact: 'drop'
             displayName: 'Publish Pipeline Artifact'
 
@@ -128,7 +128,7 @@ stages:
 
                 - task: ExtractFiles@1
                   inputs:
-                    archiveFilePatterns: '$(System.DefaultWorkingDirectory)/$(Build.BuildId).tgz'
+                    archiveFilePatterns: '$(Pipeline.Workspace)/drop/$(Build.BuildId).tgz'
                     destinationFolder: '$(System.DefaultWorkingDirectory)/'
                     cleanDestinationFolder: false
                   displayName: 'Extract Plan Artifact'
