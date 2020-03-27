@@ -114,7 +114,7 @@ stages:
                   inputs:
                     targetType: inline
                     script: |
-                      echo "System.DefaultWorkingDirectory = ${System.DefaultWorkingDirectory}"
+                      echo "System.DefaultWorkingDirectory = $(System.DefaultWorkingDirectory)"
                   displayName: "New Task"
 
                 - task: ExtractFiles@1
