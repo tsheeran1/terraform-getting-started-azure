@@ -31,9 +31,9 @@ stages:
               filePath: './scripts/terraform-download.sh'
             displayName: 'Terraform Download'
 
-          - task: AzureCLI@1
+          - task: AzureCLI@2
             inputs:
-              azureSubscription: 'Azure RM 1'
+              azureSubscription: 'Azure RM'
               scriptLocation: inlineScript
 #              scriptPath: './scripts/environment-setup.sh'
               scriptType: bash
@@ -140,7 +140,7 @@ stages:
 
                 - task: AzureCLI@1
                   inputs:
-                    azureSubscription: 'Azure RM 1'
+                    azureSubscription: 'Azure RM'
                     scriptLocation: 'scriptPath'
                     scriptPath: './scripts/environment-setup.sh'
                     addSpnToEnvironment: true
